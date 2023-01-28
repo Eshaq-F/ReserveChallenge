@@ -13,4 +13,4 @@ RUN pip3 install -r requirements.txt
 
 COPY restapi /django
 
-CMD [ "/bin/sh", "/django/entry.sh" ]
+CMD [ "python3", "/django/run.py" ]
