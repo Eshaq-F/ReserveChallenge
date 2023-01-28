@@ -1,0 +1,57 @@
+{% extends "admin/base_site.html" %}
+
+{% block title %}Get Report{% endblock %}
+
+{% block content %}
+    <style>
+      form div {
+          font-size: 20px;
+          margin-bottom: 10px;
+          text-align: left
+      }
+      label {
+          display: inline-block;
+          text-align: right;
+      }
+    </style>
+    <h1 style="text-align: center; color: #7CA0C7">Get Reservation Report</h1>
+    <form action="{% url 'administration:get_report' %}" style="margin-top: 32px" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+        {{ form.as_div }}
+        <br>
+        <div>
+            <input type="submit" value="DOWNLOAD"/> <br>
+        </div>
+    </form>
+    <br>
+    <div>
+        {% if status == 'error' %}
+            {{ message }}
+        {% endif %}
+        {% if status == 'ok' %}
+            <p style="color: green">{{ message }}</p>
+        {% endif %}
+    </div>
+    {% for i in message %}
+        {{ i.value   }}
+    {% endfor %}
+
+
+<script>
+document.getElementById("id_device").addEventListener("click", setHint);
+setHint()
+function setHint() {
+    device = document.getElementById("id_device")
+    d = device.options[device.selectedIndex].text;
+    hintElements = document.body.getElementsByTagName('small')
+    for (var i = 0; i < hintElements.length; i++) {
+        if ('hint-' + d === hintElements[i].id)
+            hintElements[i].style.display = "inline"
+        else
+            hintElements[i].style.display = "none"
+    }
+}
+</script>
+{% endblock %}
+
+
