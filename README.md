@@ -15,7 +15,8 @@ wait a bit and open http://localhost:8000/swagger/  to see or test APIs.
 
 To get the report of reservation in a file go to [admin panel](http://localhost:8000/admin/get-report/) as shown in the image below:
 <br /><br />
-![](../../Pictures/Screenshot 2023-01-28 161855.jpeg)
+![Screenshot 2023-01-28 161855](https://user-images.githubusercontent.com/71772445/215268638-ae046e05-1fcb-4e49-93fa-d1a77ff552c2.jpeg)
+
 <br /><br />
 Some data is seeded in your database for testing...
 > And high permission user: ***username: admin password: admin***
