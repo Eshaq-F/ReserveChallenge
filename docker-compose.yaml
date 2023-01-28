@@ -1,12 +1,7 @@
 version: '3'
 
 services:
-    redis:
-        image: redis:alpine
-        logging:
-            driver: none
-
-    db:
+    database:
         image: postgres:15.1
         command: postgres -c 'max_connections=10000'
         volumes:
@@ -23,18 +18,15 @@ services:
         build:
             context: .
             dockerfile: ./Dockerfile
-#        command: python manage.py runserver
         volumes:
             - ./restapi:/django
         ports:
             - "8000:8000"
         depends_on:
-            - db
-            - redis
+            - database
         environment:
             DEBUG: "true"
-            DATABASE_HOST: db
-            REDIS_SERVICE_HOST: redis://redis:6379
+            DATABASE_HOST: "database"
 
 volumes:
     pgdata:

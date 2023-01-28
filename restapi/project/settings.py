@@ -96,23 +96,11 @@ DATABASES = {
         'NAME': getenv('DATABASE_NAME', 'django'),
         'USER': getenv('DATABASE_USER', 'django'),
         'PASSWORD': getenv('DATABASE_PASSWORD', 'django'),
-        'HOST': getenv('DATABASE_SERVICE_HOST', 'db'),
+        'HOST': getenv('DATABASE_SERVICE_HOST', 'database'),
         'PORT': getenv('DATABASE_SERVICE_PORT', 5432)
     }
 }
 
-
-CACHES = {
-    'default': {
-        'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION': getenv('REDIS_SERVICE_HOST'),
-        'OPTIONS': {
-            "CLIENT_CLASS": "django_redis.client.DefaultClient",
-            "CONNECTION_POOL_KWARGS": {"max_connections": 100},
-            'SOCKET_TIMEOUT': 10,
-        },
-    }
-}
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
