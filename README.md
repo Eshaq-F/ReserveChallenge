@@ -1,19 +1,27 @@
-# Meteorologist
-This application is a Meteorology REST API that support all city and countries around the world...
+# Reservation Project
+This application is a small reserve manager for a places like hotel or an inn.
 <br />
 
-## Follow the steps below to setup and run the progect:
+## Follow the steps below to setup and run the project:
+Enter these commands in a terminal or cmd of a directory you specified for this project
 ```
-git clone https://github.com/Eshaq-F/Meteorologist.git
-cd Meteorologist
+git clone https://github.com/Eshaq-F/ReserveChallenge.git
+cd ReserveChallenge
 docker-compose build
-docker-compose up -d
+docker-compose up
 ```
 
-wait about 20 seconds and open http://localhost:8000/swagger/ .
-<br /><br /><br />
+wait a bit and open http://localhost:8000/swagger/  to see or test APIs.
 
-*All Done, Now you can enjoy fast Meteorology service for your applications.*
+To get the report of reservation in a file go to [admin panel](http://localhost:8000/admin/get-report/) as shown in the image below:
+<br /><br />
+![](../../Pictures/Screenshot 2023-01-28 161855.jpeg)
+<br /><br />
+Some data is seeded in your database for testing...
+> And high permission user: ***username: admin password: admin***
+***
+
+*All Done, Now you can enjoy your reservation management system.*
 ___
 
-> Created in March 2022
+> Created in January 2023
